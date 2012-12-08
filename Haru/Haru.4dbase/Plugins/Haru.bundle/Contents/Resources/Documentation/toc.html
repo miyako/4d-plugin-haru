@@ -1,0 +1,1389 @@
+<html xmlns:date="http://exslt.org/dates-and-times">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./CSS/default.css">
+<title>Haru</title>
+</head>
+<body>
+<h3>Commands</h3>
+<p>
+<a target="content" href="./content.html#command:1">Extended Graphics State</a>
+</p>
+<dl>
+<dd>
+<a target="content" href="./content.html#command:1,1">PDF_ExtGState_SetAlphaFill</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:1,2">PDF_ExtGState_SetAlphaStroke</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:1,3">PDF_ExtGState_SetBlendMode</a>
+</dd>
+</dl>
+<p>
+<a target="content" href="./content.html#command:2">Document</a>
+</p>
+<dl>
+<dd>
+<a target="content" href="./content.html#command:2,21">PDF_AddPage</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,10">PDF_AddPageLabel</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,8">PDF_CreateExtGState</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,19">PDF_CreateOutline</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,35">PDF_Free</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,33">PDF_FreeDoc</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,32">PDF_FreeDocAll</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,38">PDF_GetCurrentEncoder</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,22">PDF_GetCurrentPage</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,37">PDF_GetEncoder</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,31">PDF_GetFont</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,44">PDF_GetInfoAttr</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,6">PDF_GetPageByIndex</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,26">PDF_GetPageLayout</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,24">PDF_GetPageMode</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,13">PDF_GetTTFontDefFromFile</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,51">PDF_GetViewerPreference</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,30">PDF_HasDoc</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,20">PDF_InsertPage</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,42">PDF_LoadJpegImageFromFile</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,41">PDF_LoadJpegImageFromMem</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,17">PDF_LoadPngImageFromFile</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,40">PDF_LoadPngImageFromMem</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,9">PDF_LoadRaw1BitImageFromMem</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,16">PDF_LoadRawImageFromFile</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,39">PDF_LoadRawImageFromMem</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,11">PDF_LoadTTFontFromFile</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,14">PDF_LoadType1FontFromFile</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,5">PDF_LoadU3DFromFile</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,36">PDF_New</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,34">PDF_NewDoc</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,15">PDF_ResetError</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,29">PDF_SaveToFile</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,54">PDF_SaveToStream</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,49">PDF_SetCompressionMode</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,7">PDF_SetCurrentEncoder</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,48">PDF_SetEncryptionMode</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,43">PDF_SetInfoAttr</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,45">PDF_SetInfoDateAttr</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,23">PDF_SetOpenAction</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,27">PDF_SetPageLayout</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,25">PDF_SetPageMode</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,28">PDF_SetPagesConfiguration</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,46">PDF_SetPassword</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,47">PDF_SetPermission</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,52">PDF_SetViewerPreference</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,12">PDF_UseCNSEncodings</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,55">PDF_UseCNSFonts</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,4">PDF_UseCNTEncodings</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,53">PDF_UseCNTFonts</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,50">PDF_UseJPEncodings</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,57">PDF_UseJPFonts</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,18">PDF_UseKREncodings</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:2,56">PDF_UseKRFonts</a>
+</dd>
+</dl>
+<p>
+<a target="content" href="./content.html#command:3">Annotation</a>
+</p>
+<dl>
+<dd>
+<a target="content" href="./content.html#command:3,66">PDF_Annot_SetCMYKColor</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:3,65">PDF_Annot_SetGrayColor</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:3,64">PDF_Annot_SetNoColor</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:3,67">PDF_Annot_SetRGBColor</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:3,68">PDF_Annotation_SetBorderStyle</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:3,86">PDF_FreeAnnot_Set2PointCallout</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:3,85">PDF_FreeAnnot_Set3PointCallout</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:3,87">PDF_FreeAnnot_SetDefaultStyle</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:3,84">PDF_FreeAnnot_SetEndingStyle</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:3,80">PDF_LineAnnot_SetCaption</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:3,79">PDF_LineAnnot_SetLeader</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:3,81">PDF_LineAnnot_SetPosition</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:3,71">PDF_LinkAnnot_SetBorderStyle</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:3,72">PDF_LinkAnnot_SetHighlightMode</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:3,60">PDF_MarkupAnnot_SetAlpha</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:3,76">PDF_MarkupAnnot_SetCMYKColor</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:3,74">PDF_MarkupAnnot_SetCloudEffect</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:3,61">PDF_MarkupAnnot_SetDate</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:3,77">PDF_MarkupAnnot_SetGrayColor</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:3,59">PDF_MarkupAnnot_SetIntent</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:3,78">PDF_MarkupAnnot_SetNoColor</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:3,58">PDF_MarkupAnnot_SetPopup</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:3,83">PDF_MarkupAnnot_SetQuadPoints</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:3,75">PDF_MarkupAnnot_SetRGBColor</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:3,73">PDF_MarkupAnnot_SetRectDiff</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:3,62">PDF_MarkupAnnot_SetSubject</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:3,63">PDF_MarkupAnnot_SetTitle</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:3,82">PDF_PopupAnnot_SetOpened</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:3,70">PDF_TextAnnot_SetIcon</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:3,69">PDF_TextAnnot_SetOpened</a>
+</dd>
+</dl>
+<p>
+<a target="content" href="./content.html#command:4">Outline</a>
+</p>
+<dl>
+<dd>
+<a target="content" href="./content.html#command:4,88">PDF_Outline_SetDestination</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:4,89">PDF_Outline_SetOpened</a>
+</dd>
+</dl>
+<p>
+<a target="content" href="./content.html#command:5">Destination</a>
+</p>
+<dl>
+<dd>
+<a target="content" href="./content.html#command:5,96">PDF_Destination_SetFit</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:5,92">PDF_Destination_SetFitB</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:5,91">PDF_Destination_SetFitBH</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:5,90">PDF_Destination_SetFitBV</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:5,95">PDF_Destination_SetFitH</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:5,93">PDF_Destination_SetFitR</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:5,94">PDF_Destination_SetFitV</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:5,97">PDF_Destination_SetXYZ</a>
+</dd>
+</dl>
+<p>
+<a target="content" href="./content.html#command:6">Global</a>
+</p>
+<dl>
+<dd>
+<a target="content" href="./content.html#command:6,98">PDF_Global_GetEncoding</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:6,99">PDF_Global_SetEncoding</a>
+</dd>
+</dl>
+<p>
+<a target="content" href="./content.html#command:7">Page</a>
+</p>
+<dl>
+<dd>
+<a target="content" href="./content.html#command:7,134">PDF_Page_Arc</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,133">PDF_Page_BeginText</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,132">PDF_Page_Circle</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,131">PDF_Page_Clip</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,130">PDF_Page_ClosePath</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,128">PDF_Page_ClosePathEofillStroke</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,127">PDF_Page_ClosePathFillStroke</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,129">PDF_Page_ClosePathStroke</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,126">PDF_Page_Concat</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,135">PDF_Page_CreateCircleAnnot</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,172">PDF_Page_CreateDestination</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,140">PDF_Page_CreateFreeTextAnnot</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,144">PDF_Page_CreateHighlightAnnot</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,145">PDF_Page_CreateLineAnnot</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,174">PDF_Page_CreateLinkAnnot</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,139">PDF_Page_CreatePopupAnnot</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,137">PDF_Page_CreateProjectionAnnot</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,136">PDF_Page_CreateSquareAnnot</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,142">PDF_Page_CreateSquigglyAnnot</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,138">PDF_Page_CreateStampAnnot</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,141">PDF_Page_CreateStrikeOutAnnot</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,173">PDF_Page_CreateTextAnnot</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,146">PDF_Page_CreateTextMarkupAnnot</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,175">PDF_Page_CreateURILinkAnnot</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,143">PDF_Page_CreateUnderlineAnnot</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,125">PDF_Page_CurveTo</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,124">PDF_Page_CurveTo2</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,123">PDF_Page_CurveTo3</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,122">PDF_Page_DrawImage</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,121">PDF_Page_Ellipse</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,120">PDF_Page_EndPath</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,119">PDF_Page_EndText</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,118">PDF_Page_Eoclip</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,117">PDF_Page_Eofill</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,116">PDF_Page_EofillStroke</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,115">PDF_Page_Fill</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,114">PDF_Page_FillStroke</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,113">PDF_Page_GRestore</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,112">PDF_Page_GSave</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,198">PDF_Page_GetCMYKFill</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,199">PDF_Page_GetCMYKStroke</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,190">PDF_Page_GetCharSpace</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,181">PDF_Page_GetCurrentFont</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,182">PDF_Page_GetCurrentFontSize</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,179">PDF_Page_GetCurrentPos</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,180">PDF_Page_GetCurrentTextPos</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,188">PDF_Page_GetDash</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,203">PDF_Page_GetFillingColorSpace</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,189">PDF_Page_GetFlat</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,178">PDF_Page_GetGMode</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,205">PDF_Page_GetGStateDepth</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,200">PDF_Page_GetGrayFill</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,201">PDF_Page_GetGrayStroke</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,171">PDF_Page_GetHeight</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,192">PDF_Page_GetHorizontalScalling</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,185">PDF_Page_GetLineCap</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,186">PDF_Page_GetLineJoin</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,184">PDF_Page_GetLineWidth</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,187">PDF_Page_GetMiterLimit</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,196">PDF_Page_GetRGBFill</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,197">PDF_Page_GetRGBStroke</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,202">PDF_Page_GetStrokingColorSpace</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,193">PDF_Page_GetTextLeading</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,204">PDF_Page_GetTextMatrix</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,194">PDF_Page_GetTextRenderingMode</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,195">PDF_Page_GetTextRise</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,183">PDF_Page_GetTransMatrix</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,170">PDF_Page_GetWidth</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,191">PDF_Page_GetWordSpace</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,111">PDF_Page_LineTo</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,177">PDF_Page_MeasureText</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,110">PDF_Page_MoveTextPos</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,109">PDF_Page_MoveTo</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,108">PDF_Page_MoveToNextLine</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,107">PDF_Page_Rectangle</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,105">PDF_Page_SetCMYKFill</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,104">PDF_Page_SetCMYKStroke</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,106">PDF_Page_SetCharSpace</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,103">PDF_Page_SetDash</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,102">PDF_Page_SetExtGState</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,101">PDF_Page_SetFontAndSize</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,100">PDF_Page_SetGrayFill</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,165">PDF_Page_SetGrayStroke</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,167">PDF_Page_SetHeight</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,164">PDF_Page_SetHorizontalScalling</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,163">PDF_Page_SetLineCap</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,162">PDF_Page_SetLineJoin</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,161">PDF_Page_SetLineWidth</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,160">PDF_Page_SetMiterLimit</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,159">PDF_Page_SetRGBFill</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,158">PDF_Page_SetRGBStroke</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,169">PDF_Page_SetRotate</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,168">PDF_Page_SetSize</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,206">PDF_Page_SetSlideShow</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,157">PDF_Page_SetTextLeading</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,156">PDF_Page_SetTextMatrix</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,155">PDF_Page_SetTextRenderingMode</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,154">PDF_Page_SetTextRise</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,166">PDF_Page_SetWidth</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,153">PDF_Page_SetWordSpace</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,207">PDF_Page_SetZoom</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,152">PDF_Page_ShowText</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,151">PDF_Page_ShowTextNextLine</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,150">PDF_Page_ShowTextNextLineEx</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,149">PDF_Page_Stroke</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,148">PDF_Page_TextOut</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,147">PDF_Page_TextRect</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:7,176">PDF_Page_TextWidth</a>
+</dd>
+</dl>
+<p>
+<a target="content" href="./content.html#command:8">Font</a>
+</p>
+<dl>
+<dd>
+<a target="content" href="./content.html#command:8,212">PDF_Font_GetAscent</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:8,211">PDF_Font_GetBBox</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:8,215">PDF_Font_GetCapHeight</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:8,213">PDF_Font_GetDescent</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:8,209">PDF_Font_GetEncodingName</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:8,208">PDF_Font_GetFontName</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:8,210">PDF_Font_GetUnicodeWidth</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:8,214">PDF_Font_GetXHeight</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:8,217">PDF_Font_MeasureText</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:8,216">PDF_Font_TextWidth</a>
+</dd>
+</dl>
+<p>
+<a target="content" href="./content.html#command:9">Image</a>
+</p>
+<dl>
+<dd>
+<a target="content" href="./content.html#command:9,219">PDF_Image_AddSMask</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:9,222">PDF_Image_GetBitsPerComponent</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:9,223">PDF_Image_GetColorSpace</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:9,221">PDF_Image_GetHeight</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:9,218">PDF_Image_GetSize</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:9,220">PDF_Image_GetWidth</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:9,224">PDF_Image_SetColorMask</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#command:9,225">PDF_Image_SetMaskImage</a>
+</dd>
+</dl>
+<h3>Constants</h3>
+<p>
+<a target="content" href="./content.html#constant:1">PDF Text Alignment</a>
+</p>
+<dl>
+<dd>
+<a target="content" href="./content.html#constant:1,1">HPDF_TALIGN_LEFT</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:1,2">HPDF_TALIGN_RIGHT</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:1,3">HPDF_TALIGN_CENTER</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:1,4">HPDF_TALIGN_JUSTIFY</a>
+</dd>
+</dl>
+<p>
+<a target="content" href="./content.html#constant:2">PDF Text Rendering Mode</a>
+</p>
+<dl>
+<dd>
+<a target="content" href="./content.html#constant:2,1">HPDF_FILL</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:2,2">HPDF_STROKE</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:2,3">HPDF_FILL_THEN_STROKE</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:2,4">HPDF_INVISIBLE</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:2,5">HPDF_FILL_CLIPPING</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:2,6">HPDF_STROKE_CLIPPING</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:2,7">HPDF_FILL_STROKE_CLIPPING</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:2,8">HPDF_CLIPPING</a>
+</dd>
+</dl>
+<p>
+<a target="content" href="./content.html#constant:3">PDF Line Join</a>
+</p>
+<dl>
+<dd>
+<a target="content" href="./content.html#constant:3,1">HPDF_MITER_JOIN</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:3,2">HPDF_ROUND_JOIN</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:3,3">HPDF_BEVEL_JOIN</a>
+</dd>
+</dl>
+<p>
+<a target="content" href="./content.html#constant:4">PDF Line Cap</a>
+</p>
+<dl>
+<dd>
+<a target="content" href="./content.html#constant:4,1">HPDF_BUTT_END</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:4,2">HPDF_ROUND_END</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:4,3">HPDF_PROJECTING_SQUARE_END</a>
+</dd>
+</dl>
+<p>
+<a target="content" href="./content.html#constant:5">PDF Border Style Subtype</a>
+</p>
+<dl>
+<dd>
+<a target="content" href="./content.html#constant:5,1">HPDF_BS_SOLID</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:5,2">HPDF_BS_DASHED</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:5,3">HPDF_BS_BEVELED</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:5,4">HPDF_BS_INSET</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:5,5">HPDF_BS_UNDERLINED</a>
+</dd>
+</dl>
+<p>
+<a target="content" href="./content.html#constant:6">PDF Annotation Icon</a>
+</p>
+<dl>
+<dd>
+<a target="content" href="./content.html#constant:6,1">HPDF_ANNOT_ICON_COMMENT</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:6,2">HPDF_ANNOT_ICON_KEY</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:6,3">HPDF_ANNOT_ICON_NOTE</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:6,4">HPDF_ANNOT_ICON_HELP</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:6,5">HPDF_ANNOT_ICON_NEW_PARAGRAPH</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:6,6">HPDF_ANNOT_ICON_PARAGRAPH</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:6,7">HPDF_ANNOT_ICON_INSERT</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:6,8">HPDF_ANNOT_ICON_EOF</a>
+</dd>
+</dl>
+<p>
+<a target="content" href="./content.html#constant:7">PDF Annotation Highlight Mode</a>
+</p>
+<dl>
+<dd>
+<a target="content" href="./content.html#constant:7,1">HPDF_ANNOT_NO_HIGHTLIGHT</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:7,2">HPDF_ANNOT_INVERT_BOX</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:7,3">HPDF_ANNOT_INVERT_BORDER</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:7,4">HPDF_ANNOT_DOWN_APPEARANCE</a>
+</dd>
+</dl>
+<p>
+<a target="content" href="./content.html#constant:8">PDF Encoding</a>
+</p>
+<dl>
+<dd>
+<a target="content" href="./content.html#constant:8,8">HPDF_DEFAULT</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:8,9">HPDF_MAC_ROMAN</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:8,2">HPDF_SHIFT_JIS</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:8,1">HPDF_BIG5</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:8,3">HPDF_EUC_KR</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:8,4">HPDF_KOI8R</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:8,5">HPDF_ISO_8859_1</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:8,10">HPDF_ISO_8859_2</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:8,11">HPDF_ISO_8859_4</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:8,12">HPDF_ISO_8859_5</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:8,13">eVTC_ISO_8859_6</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:8,14">HPDF_ISO_8859_7</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:8,15">HPDF_ISO_8859_8</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:8,16">HPDF_ISO_8859_9</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:8,6">HPDF_GB2312</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:8,17">HPDF_GB2312_80</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:8,7">HPDF_ISO_8859_15</a>
+</dd>
+</dl>
+<p>
+<a target="content" href="./content.html#constant:9">PDF Boolean</a>
+</p>
+<dl>
+<dd>
+<a target="content" href="./content.html#constant:9,1">HPDF_FALSE</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:9,2">HPDF_TRUE</a>
+</dd>
+</dl>
+<p>
+<a target="content" href="./content.html#constant:10">PDF Page Mode</a>
+</p>
+<dl>
+<dd>
+<a target="content" href="./content.html#constant:10,1">HPDF_PAGE_MODE_USE_NONE</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:10,2">HPDF_PAGE_MODE_USE_OUTLINE</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:10,3">HPDF_PAGE_MODE_USE_THUMBS</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:10,4">HPDF_PAGE_MODE_FULL_SCREEN</a>
+</dd>
+</dl>
+<p>
+<a target="content" href="./content.html#constant:11">PDF Page Layout</a>
+</p>
+<dl>
+<dd>
+<a target="content" href="./content.html#constant:11,1">HPDF_PAGE_LAYOUT_SINGLE</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:11,2">HPDF_PAGE_LAYOUT_1COLUMN</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:11,3">HPDF_PAGE_LAYOUT_2COLUMN_LEFT</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:11,4">HPDF_PAGE_LAYOUT_2COLUMN_RIGHT</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:11,5">HPDF_PAGE_LAYOUT_2PAGE_LEFT</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:11,6">HPDF_PAGE_LAYOUT_2PAGE_RIGHT</a>
+</dd>
+</dl>
+<p>
+<a target="content" href="./content.html#constant:12">PDF Compression Mode</a>
+</p>
+<dl>
+<dd>
+<a target="content" href="./content.html#constant:12,1">HPDF_COMP_NONE</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:12,2">HPDF_COMP_TEXT</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:12,5">HPDF_COMP_ALL</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:12,3">HPDF_COMP_IMAGE</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:12,4">HPDF_COMP_METADATA</a>
+</dd>
+</dl>
+<p>
+<a target="content" href="./content.html#constant:13">PDF Encrypt Mode</a>
+</p>
+<dl>
+<dd>
+<a target="content" href="./content.html#constant:13,1">HPDF_ENCRYPT_R2</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:13,2">HPDF_ENCRYPT_R3</a>
+</dd>
+</dl>
+<p>
+<a target="content" href="./content.html#constant:14">PDF Permission</a>
+</p>
+<dl>
+<dd>
+<a target="content" href="./content.html#constant:14,1">HPDF_ENABLE_READ</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:14,4">HPDF_ENABLE_COPY</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:14,5">HPDF_ENABLE_EDIT</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:14,2">HPDF_ENABLE_PRINT</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:14,3">HPDF_ENABLE_EDIT_ALL</a>
+</dd>
+</dl>
+<p>
+<a target="content" href="./content.html#constant:15">PDF Date Info Type</a>
+</p>
+<dl>
+<dd>
+<a target="content" href="./content.html#constant:15,1">HPDF_INFO_CREATION_DATE</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:15,2">HPDF_INFO_MOD_DATE</a>
+</dd>
+</dl>
+<p>
+<a target="content" href="./content.html#constant:16">PDF Relation to UTC</a>
+</p>
+<dl>
+<dd>
+<a target="content" href="./content.html#constant:16,1">HPDF_UTC_OFFSET_NONE</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:16,2">HPDF_UTC_OFFSET_POSITIVE</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:16,3">HPDF_UTC_OFFSET_NEGATIVE</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:16,4">HPDF_UTC_OFFSET_ZERO</a>
+</dd>
+</dl>
+<p>
+<a target="content" href="./content.html#constant:17">PDF Info Type</a>
+</p>
+<dl>
+<dd>
+<a target="content" href="./content.html#constant:17,1">HPDF_INFO_AUTHOR</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:17,2">HPDF_INFO_CREATOR</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:17,3">HPDF_INFO_PRODUCER</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:17,4">HPDF_INFO_TITLE</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:17,5">HPDF_INFO_SUBJECT</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:17,6">HPDF_INFO_KEYWORDS</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:17,7">HPDF_INFO_TRAPPED</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:17,8">HPDF_INFO_GTS_PDFX</a>
+</dd>
+</dl>
+<p>
+<a target="content" href="./content.html#constant:18">PDF Transition Style</a>
+</p>
+<dl>
+<dd>
+<a target="content" href="./content.html#constant:18,1">HPDF_TS_WIPE_RIGHT</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:18,2">HPDF_TS_WIPE_UP</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:18,11">HPDF_TS_BLINDS_HORIZONTAL</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:18,12">HPDF_TS_BLINDS_VERTICAL</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:18,13">HPDF_TS_DISSOLVE</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:18,14">HPDF_TS_GLITTER_RIGHT</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:18,15">HPDF_TS_GLITTER_DOWN</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:18,16">HPDF_TS_GLITTER_TL_TO_BR</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:18,17">HPDF_TS_REPLACE</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:18,3">HPDF_TS_WIPE_LEFT</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:18,4">HPDF_TS_WIPE_DOWN</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:18,5">HPDF_TS_BARN_DOORS_H_OUT</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:18,6">HPDF_TS_BARN_DOORS_H_IN</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:18,7">HPDF_TS_BARN_DOORS_V_OUT</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:18,8">HPDF_TS_BARN_DOORS_V_IN</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:18,9">HPDF_TS_BOX_OUT</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:18,10">HPDF_TS_BOX_IN</a>
+</dd>
+</dl>
+<p>
+<a target="content" href="./content.html#constant:19">PDF Page Size</a>
+</p>
+<dl>
+<dd>
+<a target="content" href="./content.html#constant:19,1">HPDF_PAGE_SIZE_LETTER</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:19,2">HPDF_PAGE_SIZE_LEGAL</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:19,11">HPDF_PAGE_SIZE_US5x7</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:19,12">HPDF_PAGE_SIZE_COMM10</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:19,3">HPDF_PAGE_SIZE_A3</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:19,4">HPDF_PAGE_SIZE_A4</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:19,5">HPDF_PAGE_SIZE_A5</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:19,6">HPDF_PAGE_SIZE_B4</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:19,7">HPDF_PAGE_SIZE_B5</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:19,8">HPDF_PAGE_SIZE_EXECUTIVE</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:19,9">HPDF_PAGE_SIZE_US4x6</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:19,10">HPDF_PAGE_SIZE_US4x8</a>
+</dd>
+</dl>
+<p>
+<a target="content" href="./content.html#constant:20">PDF Page Direction</a>
+</p>
+<dl>
+<dd>
+<a target="content" href="./content.html#constant:20,2">HPDF_PAGE_PORTRAIT</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:20,1">HPDF_PAGE_LANDSCAPE</a>
+</dd>
+</dl>
+<p>
+<a target="content" href="./content.html#constant:21">PDF Page Number Style</a>
+</p>
+<dl>
+<dd>
+<a target="content" href="./content.html#constant:21,1">HPDF_NUM_STYLE_DECIMAL</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:21,2">HPDF_NUM_STYLE_UPPER_ROMAN</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:21,3">HPDF_NUM_STYLE_LOWER_ROMAN</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:21,4">HPDF_NUM_STYLE_UPPER_LETTERS</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:21,5">HPDF_NUM_STYLE_LOWER_LETTERS</a>
+</dd>
+</dl>
+<p>
+<a target="content" href="./content.html#constant:22">PDF Annotation Type</a>
+</p>
+<dl>
+<dd>
+<a target="content" href="./content.html#constant:22,1">HPDF_ANNOT_TEXT_NOTES</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:22,2">HPDF_ANNOT_LINK</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:22,11">HPDF_ANNOT_INK</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:22,12">HPDF_ANNOT_FILE_ATTACHMENT</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:22,13">HPDF_ANNOT_POPUP</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:22,14">HPDF_ANNOT_3D</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:22,15">HPDF_ANNOT_SQUIGGLY</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:22,16">HPDF_ANNOT_LINE</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:22,17">HPDF_ANNOT_PROJECTION</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:22,3">HPDF_ANNOT_SOUND</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:22,4">HPDF_ANNOT_FREE_TEXT</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:22,5">HPDF_ANNOT_STAMP</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:22,6">HPDF_ANNOT_SQUARE</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:22,7">HPDF_ANNOT_CIRCLE</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:22,8">HPDF_ANNOT_STRIKE_OUT</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:22,9">HPDF_ANNOT_HIGHTLIGHT</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:22,10">HPDF_ANNOT_UNDERLINE</a>
+</dd>
+</dl>
+<p>
+<a target="content" href="./content.html#constant:23">PDF Stamp Annotation Name</a>
+</p>
+<dl>
+<dd>
+<a target="content" href="./content.html#constant:23,1">HPDF_STAMP_ANNOT_APPROVED</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:23,2">HPDF_STAMP_ANNOT_EXPERIMENTAL</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:23,11">HPDF_STAMP_ANNOT_FORCOMMENT</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:23,12">HPDF_STAMP_ANNOT_TOPSECRET</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:23,13">HPDF_STAMP_ANNOT_DRAFT</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:23,14">HPDF_STAMP_ANNOT_FORPUBLIC</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:23,3">HPDF_STAMP_ANNOT_NOTAPPROVED</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:23,4">HPDF_STAMP_ANNOT_ASIS</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:23,5">HPDF_STAMP_ANNOT_EXPIRED</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:23,6">HPDF_STAMP_ANNOT_NOTFORPUBLIC</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:23,7">HPDF_STAMP_ANNOT_CONFIDENTIAL</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:23,8">HPDF_STAMP_ANNOT_FINAL</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:23,9">HPDF_STAMP_ANNOT_SOLD</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:23,10">HPDF_STAMP_ANNOT_DEPARTMENTAL</a>
+</dd>
+</dl>
+<p>
+<a target="content" href="./content.html#constant:24">PDF Annotation Intent</a>
+</p>
+<dl>
+<dd>
+<a target="content" href="./content.html#constant:24,1">HPDF_ANNOT_FREETEXTCALLOUT</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:24,2">HPDF_ANNOT_FREETEXTTYPEWRITER</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:24,3">HPDF_ANNOT_LINEARROW</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:24,4">HPDF_ANNOT_LINEDIMENSION</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:24,5">HPDF_ANNOT_POLYGONCLOUD</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:24,6">HPDF_ANNOT_POLYLINEDIMENSION</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:24,7">HPDF_ANNOT_POLYGONDIMENSION</a>
+</dd>
+</dl>
+<p>
+<a target="content" href="./content.html#constant:25">PDF Line Annotation Position</a>
+</p>
+<dl>
+<dd>
+<a target="content" href="./content.html#constant:25,1">HPDF_LINE_ANNOT_CAP_INLINE</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:25,2">HPDF_LINE_ANNOT_CAP_TOP</a>
+</dd>
+</dl>
+<p>
+<a target="content" href="./content.html#constant:26">PDF Line Annotation Ending</a>
+</p>
+<dl>
+<dd>
+<a target="content" href="./content.html#constant:26,1">HPDF_LINE_ANNOT_NONE</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:26,2">HPDF_LINE_ANNOT_SQUARE</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:26,3">HPDF_LINE_ANNOT_CIRCLE</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:26,4">HPDF_LINE_ANNOT_DIAMOND</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:26,5">HPDF_LINE_ANNOT_OPENARROW</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:26,6">HPDF_LINE_ANNOT_CLOSEDARROW</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:26,7">HPDF_LINE_ANNOT_BUTT</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:26,8">HPDF_LINE_ANNOT_ROPENARROW</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:26,9">HPDF_LINE_ANNOT_RCLOSEDARROW</a>
+</dd>
+<dd>
+<a target="content" href="./content.html#constant:26,10">HPDF_LINE_ANNOT_SLASH</a>
+</dd>
+</dl>
+</body>
+</html>
