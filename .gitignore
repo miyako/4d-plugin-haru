@@ -1,8 +1,4 @@
 
-Haru/.DS_Store
+*.DS_Store
 
-Haru/4D Plugin API/.DS_Store
-
-Haru/lib/.DS_Store
-
-Haru/4D Plugin API/Classes/.DS_Store
+*.suo
