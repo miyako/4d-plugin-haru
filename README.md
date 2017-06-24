@@ -3,6 +3,8 @@
 
 4D implementation of [libharu](http://libharu.org).
 
+See [examples](https://github.com/miyako/4d-plugin-haru/tree/master/Haru/examples) for output.
+
 ### Platform
 
 | carbon | cocoa | win32 | win64 |
