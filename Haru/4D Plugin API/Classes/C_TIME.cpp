@@ -25,29 +25,30 @@ void C_TIME::setReturn(sLONG_PTR *pResult)
 	*(uint32_t *) pResult = this->_seconds;
 }
 
-uint32_t C_TIME::getTime()
+uint32_t C_TIME::getSeconds()
 {
 	return this->_seconds;
 }
 
-uint32_t C_TIME::getHour()
-{
-	return (this->_seconds / 3600);
-}
-
-uint32_t C_TIME::getMinutes()
-{
-	return this->_seconds - ((uint32_t)(this->getHour() * 3600)) / 60;
-}
-
-uint32_t C_TIME::getSeconds()
-{
-	return this->_seconds - (this->getHour() * 3600) - (this->getMinutes() * 60);
-}
-
-void C_TIME::setTime(uint32_t seconds)
+void C_TIME::setSeconds(uint32_t seconds)
 {
 	this->_seconds = seconds;		
+}
+
+void C_TIME::getHourMinuteSecond(unsigned char *pHour, unsigned char *pMinute, unsigned char *pSecond)
+{
+	unsigned char hour = (this->_seconds / 3600);
+	unsigned char minute = (this->_seconds - (hour * 3600)) / 60;
+	unsigned char second = (this->_seconds - (hour * 3600) - (minute * 60));
+	
+	*pHour = hour;
+	*pMinute = minute;
+	*pSecond = second;	
+}
+
+void C_TIME::setHourMinuteSecond(unsigned char hour, unsigned char minute, unsigned char second)
+{
+	this->_seconds = second + (minute * 60) + (hour * 3600);	
 }
 
 C_TIME::C_TIME() : _seconds(0)

@@ -13,7 +13,7 @@ void _hpdf_err (HPDF_STATUS error_no,HPDF_STATUS detail_no, void *user_data){
 void _toHex(void *n, C_TEXT &hex){
 	
 	CUTF8String u;
-	size_t len = (sizeof(size_t)*2);
+	size_t len = (sizeof(void *)*2);
 	std::vector<uint8_t> buf(len+3);//on mac, we get the 0x prefix
 	
 	sprintf((char *)&buf[0], "%p", n);
@@ -30,8 +30,8 @@ void *_fromHex(C_TEXT &hex){
 	void *p = NULL;
 	CUTF8String u;
 	hex.copyUTF8String(&u);
-	
-	sscanf((const char *)u.c_str(), "%p", &p);	
+
+	sscanf((const char *)u.c_str(), "%p", &p);
 	
 	return p;
 }

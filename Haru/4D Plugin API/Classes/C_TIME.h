@@ -28,14 +28,12 @@ extern "C" {
 		void toParamAtIndex(PackagePtr pParams, uint16_t index);
 		void setReturn(sLONG_PTR *pResult);	
 		
-		uint32_t getTime();
-		
-		uint32_t getHour();	
-		uint32_t getMinutes();	
-		uint32_t getSeconds();
-		
-		void setTime(uint32_t seconds);	
+		uint32_t getSeconds();		
+		void setSeconds(uint32_t seconds);	
 
+		void getHourMinuteSecond(unsigned char *pHour, unsigned char *pMinute, unsigned char *pSecond);	
+		void setHourMinuteSecond(unsigned char hour, unsigned char minute, unsigned char second);	
+		
 		C_TIME();
 		~C_TIME();
 		
