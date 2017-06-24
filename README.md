@@ -50,7 +50,7 @@ $samp_text:=$U30A2+$U30E1+$U30F3+$U30DC+$U8D64+$U3044+$U306A+$U3042+$U3044+$U304
 
 ARRAY TEXT($font_names;8)
   //Mincho on Mac, Mincyo on Windows; the plugin absorbs the difference
-  //on Window, Mincho/Mincyo (notP) seems to default to Meiryo in Edge browser
+  //on Windows, Mincho/Mincyo (notP) seems to default to Meiryo in Edge browser
 $font_names{1}:="MS-Mincho"
 $font_names{2}:="MS-Mincho,Bold"
 $font_names{3}:="MS-PMincho"
