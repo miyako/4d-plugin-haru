@@ -1,7 +1,7 @@
 4d-plugin-haru
 ==============
 
-4D implementation of [libharu](http://libharu.org).
+4D implementation of [libharu](https://github.com/libharu/libharu).
 
 See [examples](https://github.com/miyako/4d-plugin-haru/tree/master/Haru/examples) for output.
 
