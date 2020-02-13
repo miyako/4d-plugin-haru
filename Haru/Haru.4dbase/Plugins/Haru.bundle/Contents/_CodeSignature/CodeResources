@@ -107,20 +107,15 @@
 		</dict>
 		<key>Resources/constants.xlf</key>
 		<data>
-		3UjhzFzvj5qc8A0jwTw+IoMX3u8=
+		PypYhPPCc8gQg87ne6w5HybNGLc=
+		</data>
+		<key>Resources/manifest.json</key>
+		<data>
+		sFlXYd08Li2XSnb+hEEm2fuJJJA=
 		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>MacOS/Haru.html</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			pxB1SWF3bw0XJYA81oaNP/if1kI=
-			</data>
-			<key>requirement</key>
-			<string>identifier Haru and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = Y69CWUC25B</string>
-		</dict>
 		<key>QuickLook/Thumbnail.png</key>
 		<dict>
 			<key>hash</key>
@@ -402,33 +397,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			3UjhzFzvj5qc8A0jwTw+IoMX3u8=
+			PypYhPPCc8gQg87ne6w5HybNGLc=
 			</data>
 			<key>hash2</key>
 			<data>
-			qUsasILB4FduBxKq2CWdDRAVsetkvjtbp/QmuOYz7Qs=
+			pme146cu00QJch/dw/2IawAm1pCwl06CgiGGU3ZNbhc=
+			</data>
+		</dict>
+		<key>Resources/manifest.json</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			sFlXYd08Li2XSnb+hEEm2fuJJJA=
+			</data>
+			<key>hash2</key>
+			<data>
+			qzzNkuOiSiyzMzjxefMmfJoK9fNhuf2SRafe4KkwjD0=
 			</data>
 		</dict>
 		<key>Windows/Haru.4DX</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			8WH79l2tgViHfCYSUBu+HCIQ5Es=
+			o4MoKxrw19zsoFodnhbBuHG81es=
 			</data>
 			<key>hash2</key>
 			<data>
-			rp5mwPoToTOMBrO5g9ATVRBDkkR1XpJE6MF06FX5mo0=
-			</data>
-		</dict>
-		<key>Windows/Haru.html</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			3f3hE90+GMuzyHmK9RVQvLK+Zs8=
-			</data>
-			<key>hash2</key>
-			<data>
-			EKLRdLPtg+PsdxOrCPdnhlHZLbWCJYLapu/sbQTYgHg=
+			XoySeOyf6Aatdsb9KNtp8bC/s82hAqamQyE6nZTquTs=
 			</data>
 		</dict>
 		<key>Windows/libharu.2.3.0.dll</key>
@@ -468,22 +463,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			r1aAHLsl1HqPOxOjnnlVMBT8weQ=
+			vOTXAK0ib00ssSKYI05mRg05EEg=
 			</data>
 			<key>hash2</key>
 			<data>
-			D81BlAXC8IYBjKsGDu0nx8Zm3OxlDG6/r2pFvj/FY7A=
-			</data>
-		</dict>
-		<key>Windows64/Haru.html</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			3f3hE90+GMuzyHmK9RVQvLK+Zs8=
-			</data>
-			<key>hash2</key>
-			<data>
-			EKLRdLPtg+PsdxOrCPdnhlHZLbWCJYLapu/sbQTYgHg=
+			N8MkUrxajy5FewguONCaczxjhAGxkyYuUBLApyhAsmA=
 			</data>
 		</dict>
 		<key>Windows64/libharu.2.3.0.dll</key>
@@ -519,15 +503,6 @@
 			jiSW0ahmTxhiH1kZNAWH3n484twEZOppsdXdUtWs5m8=
 			</data>
 		</dict>
-		<key>manifest.json</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			6HtBxZF83p8IBrulvKTrR0UxevI=
-			</data>
-			<key>requirement</key>
-			<string>identifier manifest and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = Y69CWUC25B</string>
-		</dict>
 	</dict>
 	<key>rules</key>
 	<dict>
@@ -546,6 +521,11 @@
 			<true/>
 			<key>weight</key>
 			<real>1100</real>
+		</dict>
+		<key>^Resources/Base\.lproj/</key>
+		<dict>
+			<key>weight</key>
+			<real>1010</real>
 		</dict>
 		<key>^version.plist$</key>
 		<true/>
@@ -605,6 +585,11 @@
 			<true/>
 			<key>weight</key>
 			<real>1100</real>
+		</dict>
+		<key>^Resources/Base\.lproj/</key>
+		<dict>
+			<key>weight</key>
+			<real>1010</real>
 		</dict>
 		<key>^[^/]+$</key>
 		<dict>
