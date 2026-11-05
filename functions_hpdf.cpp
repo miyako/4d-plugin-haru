@@ -1,6 +1,13 @@
 #include "functions_hpdf.h"
 
+#include <map>
+#include <mutex>
+
 std::map<HPDF_Doc, PA_4DCharSet> _documents;
+
+// the commands are declared threadSafe, so two preemptive processes can
+// create/free documents at the same time; std::map is not safe for that
+static std::mutex _documentsMutex;
 
 int globalEncoding = eVTC_ODBC_DEFAULT;
 
@@ -38,6 +45,8 @@ void *_fromHex(C_TEXT &hex){
 
 HPDF_Doc _documentGet(C_TEXT &hex){
 	
+	std::lock_guard<std::mutex> lock(_documentsMutex);
+	
 	HPDF_Doc d = (HPDF_Doc)_fromHex(hex);
 	
 	std::map<HPDF_Doc, PA_4DCharSet>::iterator pos = _documents.find(d);
@@ -49,6 +58,8 @@ HPDF_Doc _documentGet(C_TEXT &hex){
 }
 
 void _documentDelete(C_TEXT &hex){
+	
+	std::lock_guard<std::mutex> lock(_documentsMutex);
 	
 	HPDF_Doc d = (HPDF_Doc)_fromHex(hex);
 		
@@ -66,6 +77,7 @@ void _documentCreate(C_TEXT &hex){
 	HPDF_Doc d = HPDF_New(_hpdf_err, NULL);
 	
 	if(d){
+		std::lock_guard<std::mutex> lock(_documentsMutex);
 		_documents.insert(std::map<HPDF_Doc, PA_4DCharSet>::value_type(d, eVTC_StdLib_char));
 		_toHex(d, hex);
 	}
@@ -73,6 +85,8 @@ void _documentCreate(C_TEXT &hex){
 }
 
 PA_4DCharSet _documentGetEncoding(C_TEXT &hex){
+	
+	std::lock_guard<std::mutex> lock(_documentsMutex);
 	
 	HPDF_Doc d = (HPDF_Doc)_fromHex(hex);
 	
@@ -85,6 +99,8 @@ PA_4DCharSet _documentGetEncoding(C_TEXT &hex){
 }
 
 void _documentSetEncoding(C_TEXT &hex, PA_4DCharSet encoding){
+	
+	std::lock_guard<std::mutex> lock(_documentsMutex);
 	
 	HPDF_Doc d = (HPDF_Doc)_fromHex(hex);
 	
@@ -110,6 +126,17 @@ void _convertFromUnicode(C_TEXT &fromStr, std::string &toStr)
 							   (PA_4DCharSet)globalEncoding);
 	
 	toStr = std::string((const char *)&buf[0], len);
+}
+
+// libharu returns NULL for an unset info attribute, an invalid font/image
+// handle or a failed font load; constructing a std::string from NULL crashes
+void _setTextFromCString(const char *str, C_TEXT &text)
+{
+	if(str)
+	{
+		CUTF8String u = CUTF8String((const uint8_t *)str);
+		text.setUTF8String(&u);
+	}
 }
 
 #pragma mark -

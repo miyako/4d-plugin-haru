@@ -93,8 +93,9 @@ void PDF_Image_GetColorSpace(sLONG_PTR *pResult, PackagePtr pParams)
 	
 	HPDF_Image image = (HPDF_Image)_fromHex(Param1);
 	
-	CUTF8String u = CUTF8String((const uint8_t *)HPDF_Image_GetColorSpace(image));
-	returnValue.setUTF8String(&u);
+	// HPDF_Image_GetColorSpace does not validate the handle (NULL is dereferenced)
+	if(image)
+		_setTextFromCString(HPDF_Image_GetColorSpace(image), returnValue);
 	
 	returnValue.setReturn(pResult);
 }

@@ -1409,7 +1409,8 @@ void PDF_Page_SetDash(sLONG_PTR *pResult, PackagePtr pParams)
 	
 	std::vector<HPDF_UINT16> dash_ptn; 
 	
-	for(unsigned int i = 1; i <= Param2.getSize(); ++i)
+	// getSize() counts element 0, so the elements are 1..getSize()-1
+	for(unsigned int i = 1; i < Param2.getSize(); ++i)
 	{
 		dash_ptn.push_back(Param2.getIntValueAtIndex(i));
 	}
@@ -1417,7 +1418,12 @@ void PDF_Page_SetDash(sLONG_PTR *pResult, PackagePtr pParams)
 	HPDF_UINT num_param = (HPDF_UINT)Param3.getIntValue();	
 	HPDF_UINT flatness = (HPDF_UINT)Param4.getIntValue();
 	
-	returnValue.setIntValue(HPDF_Page_SetDash(page, &dash_ptn[0], num_param, flatness));		
+	// libharu reads num_param elements from dash_ptn: never more than the array holds
+	// (and &dash_ptn[0] is undefined for an empty vector)
+	if(num_param > dash_ptn.size())
+		num_param = (HPDF_UINT)dash_ptn.size();
+	
+	returnValue.setIntValue(HPDF_Page_SetDash(page, dash_ptn.empty() ? NULL : &dash_ptn[0], num_param, flatness));		
 	
 	returnValue.setReturn(pResult);
 }

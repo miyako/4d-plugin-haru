@@ -114,7 +114,7 @@ void PDF_SaveToStream(sLONG_PTR *pResult, PackagePtr pParams)
 		if(HPDF_SaveToStream(pdf) == HPDF_OK)
 		{
 			HPDF_UINT32 size = HPDF_GetStreamSize(pdf);
-			std::vector<char> buf(size);
+			std::vector<char> buf(size + 1);//+1: &buf[0] must be valid even if size is 0
 			if(HPDF_ReadFromStream(pdf, (HPDF_BYTE *)&buf[0], &size) == HPDF_OK)
 			{
 				Param2.setBytes((const uint8_t *)&buf[0], size);
@@ -236,8 +236,7 @@ void PDF_GetInfoAttr(sLONG_PTR *pResult, PackagePtr pParams)
 	
 	if(pdf)
 	{
-		CUTF8String u = CUTF8String((const uint8_t *)HPDF_GetInfoAttr(pdf, type));
-		returnValue.setUTF8String(&u);
+		_setTextFromCString(HPDF_GetInfoAttr(pdf, type), returnValue);
 	}	
 	
 	returnValue.setReturn(pResult);
@@ -556,6 +555,39 @@ void PDF_CreateExtGState(sLONG_PTR *pResult, PackagePtr pParams)
 #pragma mark image
 #pragma mark -
 
+// libharu reads the pixel data of a raw image from a bare pointer, sizing it
+// from the dimensions alone; these return the byte count it will read
+// (same arithmetic as hpdf_image.c / hpdf_image_ccitt.c in 2.3.0) so that a
+// BLOB that is too short is rejected instead of being read past its end
+static uint64_t _raw1BitImageSize(HPDF_UINT height, HPDF_UINT line_width)
+{
+	return (uint64_t)line_width * (uint64_t)height;
+}
+
+static uint64_t _rawImageSize(HPDF_UINT width, HPDF_UINT height, HPDF_ColorSpace color_space, HPDF_UINT bits_per_component)
+{
+	if((color_space != HPDF_CS_DEVICE_GRAY) && (color_space != HPDF_CS_DEVICE_RGB) && (color_space != HPDF_CS_DEVICE_CMYK))
+		return 0;//libharu rejects it before reading
+	
+	if((bits_per_component != 1) && (bits_per_component != 2) && (bits_per_component != 4) && (bits_per_component != 8))
+		return 0;//libharu rejects it before reading
+	
+	if((color_space == HPDF_CS_DEVICE_GRAY) && (bits_per_component == 1))
+		return _raw1BitImageSize(height, (width + 7) / 8);//HPDF_LoadRawImageFromMem switches to the 1-bit loader
+	
+	HPDF_UINT size = (HPDF_UINT)((HPDF_DOUBLE)width * height / (8 / bits_per_component) + 0.876);
+	
+	switch(color_space)
+	{
+		case HPDF_CS_DEVICE_RGB:
+			return (uint64_t)size * 3;
+		case HPDF_CS_DEVICE_CMYK:
+			return (uint64_t)size * 4;
+		default:
+			return (uint64_t)size;
+	}
+}
+
 void PDF_LoadPngImageFromMem(sLONG_PTR *pResult, PackagePtr pParams)
 {
 	C_TEXT Param1;
@@ -786,7 +818,7 @@ void PDF_LoadRaw1BitImageFromMem(sLONG_PTR *pResult, PackagePtr pParams)
 		if(HPDF_GetError(pdf) != HPDF_OK)
 			HPDF_ResetError(pdf);
 		
-		if(Param2.getBytesLength())
+		if(Param2.getBytesLength() && (Param2.getBytesLength() >= _raw1BitImageSize(height, line_width)))
 		{
 			HPDF_Image image = HPDF_Image_LoadRaw1BitImageFromMem(pdf, buf, width, height, line_width, black_is1, top_is_first);
 			if(image)
@@ -871,7 +903,7 @@ void PDF_LoadRawImageFromMem(sLONG_PTR *pResult, PackagePtr pParams)
 		if(HPDF_GetError(pdf) != HPDF_OK)
 			HPDF_ResetError(pdf);
 		
-		if(Param2.getBytesLength())
+		if(Param2.getBytesLength() && (Param2.getBytesLength() >= _rawImageSize(width, height, color_space, bits_per_component)))
 		{
 			HPDF_Image image = HPDF_LoadRawImageFromMem(pdf, buf, width, height, color_space, bits_per_component);
 			if(image)
@@ -994,22 +1026,24 @@ void PDF_GetFont(sLONG_PTR *pResult, PackagePtr pParams)
 		Param3.copyUTF8String(&v);
 		encoding_name = (const char *)v.c_str();
 		
+		// compare only names long enough to hold the whole prefix: a shorter
+		// name such as "MS" used to match and make replace() throw out_of_range
 #if VERSIONMAC
-		if(0 == strncasecmp(font_name, "MS-Mincyo", u.length() > 8 ? 8 : u.length()))
+		if((u.length() >= 8) && (0 == strncasecmp(font_name, "MS-Mincyo", 8)))
 		{
 			u = u.replace(7, 1, (const uint8_t *)"h");
 			font_name = (const char *)u.c_str();
-		}else if(0 == strncasecmp(font_name, "MS-PMincyo", u.length() > 9 ? 9 : u.length()))
+		}else if((u.length() >= 9) && (0 == strncasecmp(font_name, "MS-PMincyo", 9)))
 		{
 			u = u.replace(8, 1, (const uint8_t *)"h");
 			font_name = (const char *)u.c_str();
 		}
 #else
-		if(0 == strncasecmp(font_name, "MS-Mincho", u.length() > 8 ? 8 : u.length()))
+		if((u.length() >= 8) && (0 == strncasecmp(font_name, "MS-Mincho", 8)))
 		{
 			u = u.replace(7, 1, (const uint8_t *)"y");
 			font_name = (const char *)u.c_str();
-		}else if(0 == strncasecmp(font_name, "MS-PMincho", u.length() > 9 ? 9 : u.length()))
+		}else if((u.length() >= 9) && (0 == strncasecmp(font_name, "MS-PMincho", 9)))
 		{
 			u = u.replace(8, 1, (const uint8_t *)"y");
 			font_name = (const char *)u.c_str();
@@ -1057,8 +1091,7 @@ void PDF_LoadType1FontFromFile(sLONG_PTR *pResult, PackagePtr pParams)
 	
 		if(Param2.getUTF16Length() && Param3.getUTF16Length())
 		{
-			CUTF8String f = CUTF8String((const uint8_t *)HPDF_LoadType1FontFromFile(pdf, afm_file_name, data_file_name));
-			returnValue.setUTF8String(&f);
+			_setTextFromCString(HPDF_LoadType1FontFromFile(pdf, afm_file_name, data_file_name), returnValue);
 		}
 	}
 	
@@ -1137,8 +1170,7 @@ void PDF_LoadTTFontFromFile(sLONG_PTR *pResult, PackagePtr pParams)
 		
 		if(Param2.getUTF16Length())
 		{
-			CUTF8String v = CUTF8String((const uint8_t *)HPDF_LoadTTFontFromFile2(pdf, file_name, index, embedding));
-			returnValue.setUTF8String(&v);
+			_setTextFromCString(HPDF_LoadTTFontFromFile2(pdf, file_name, index, embedding), returnValue);
 		}
 	}		
 	returnValue.setReturn(pResult);

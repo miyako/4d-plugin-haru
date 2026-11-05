@@ -11,8 +11,7 @@ void PDF_Font_GetFontName(sLONG_PTR *pResult, PackagePtr pParams)
 	
 	HPDF_Font font = (HPDF_Font)_fromHex(Param1);
 
-	CUTF8String u = CUTF8String((const uint8_t *)HPDF_Font_GetFontName(font));
-	returnValue.setUTF8String(&u);	
+	_setTextFromCString(HPDF_Font_GetFontName(font), returnValue);
 	
 	returnValue.setReturn(pResult);
 }
@@ -26,8 +25,7 @@ void PDF_Font_GetEncodingName(sLONG_PTR *pResult, PackagePtr pParams)
 	
 	HPDF_Font font = (HPDF_Font)_fromHex(Param1);
 	
-	CUTF8String u = CUTF8String((const uint8_t *)HPDF_Font_GetEncodingName(font));
-	returnValue.setUTF8String(&u);
+	_setTextFromCString(HPDF_Font_GetEncodingName(font), returnValue);
 	
 	returnValue.setReturn(pResult);
 }

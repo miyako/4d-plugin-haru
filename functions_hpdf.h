@@ -25,6 +25,7 @@ void _documentDelete(C_TEXT &hex);
 void *_fromHex(C_TEXT &hex);
 void _toHex(void *n, C_TEXT &hex);
 void _convertFromUnicode(C_TEXT &fromStr, std::string &toStr);
+void _setTextFromCString(const char *str, C_TEXT &text);
 
 // --- Global
 void PDF_Global_GetEncoding(sLONG_PTR *pResult, PackagePtr pParams);
