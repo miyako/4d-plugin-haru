@@ -18,7 +18,7 @@
 
 Haru creates PDF documents from 4D code. Each command is a thin wrapper around the libharu C function of (almost) the same name: `PDF_Page_ShowText` calls `HPDF_Page_ShowText`, and so on, so the [libharu documentation](https://github.com/libharu/libharu/wiki/API%3A-Page) describes the drawing model in more depth. You create a document with [PDF_New](#pdf_new), add pages, draw paths, text and images on them, save the result with [PDF_SaveToFile](#pdf_savetofile) (a file) or [PDF_SaveToStream](#pdf_savetostream) (a `Blob`), and release it with [PDF_Free](#pdf_free). Documents, pages, fonts, images, annotations, outlines and destinations are all passed around as **`Text` handles**; most other commands return a `Longint` libharu status.
 
-The plugin bundles libharu 2.3.0 (RC2 headers) with libpng and zlib.
+The plugin bundles libharu 2.3.0 (RC2 headers) with libpng and zlib. On macOS these are built from source: libharu 2.3.0 and libpng 1.6.59, with the system zlib. See [Building from source](#building-from-source).
 
 **Platforms:** macOS 11.5 or later (Apple silicon and Intel), Windows 64-bit.
 
@@ -6773,3 +6773,15 @@ $path:=System folder(Desktop)+"hello.pdf"
 $err:=PDF_SaveToFile ($pdf;$path)
 PDF_Free ($pdf)
 ```
+
+## Building from source
+
+The macOS static libraries are not committed. Build them once before you open the Xcode project:
+
+```bash
+scripts/build-macos-deps.sh
+```
+
+The script downloads pinned, checksummed releases of libharu 2.3.0 (tag `RELEASE_2_3_0`, which matches `include/hpdf_mac.h`) and libpng 1.6.59. It builds both universal (arm64 + x86_64, macOS 11.5) into `a/`. zlib comes from the macOS SDK. You need the Xcode command line tools and `cmake`. The release workflow runs the same script and caches the result.
+
+The Windows build still links the prebuilt libraries in `lib/Windows64`.

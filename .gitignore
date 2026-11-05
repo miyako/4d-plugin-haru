@@ -7,3 +7,6 @@ build/
 /Objs/
 Haru.4dbase/Plugins/Haru.bundle/Contents/MacOS/
 Haru.4dbase/Plugins/Haru.bundle/Contents/_CodeSignature/
+
+# macOS static libraries: built by scripts/build-macos-deps.sh (cached in CI)
+/a/*.a
