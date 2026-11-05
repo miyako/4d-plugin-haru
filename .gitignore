@@ -1,0 +1,9 @@
+.DS_Store
+build/
+*.4dbase/Logs/
+*.4dbase/userPreferences.*/
+/Haru.dmg
+/Haru.zip
+/Objs/
+Haru.4dbase/Plugins/Haru.bundle/Contents/MacOS/
+Haru.4dbase/Plugins/Haru.bundle/Contents/_CodeSignature/
